@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/entities/document.schema.json",
+  "title": "Document",
+  "description": "وثيقة",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "title": {
+      "type": "string",
+      "description": "العنوان"
+    },
+    "mime_type": {
+      "type": "string",
+      "description": "MIME"
+    },
+    "size_bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "hash": {
+      "type": "string",
+      "description": "SHA-256"
+    },
+    "url": {
+      "type": "string",
+      "description": "URL"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
+}
