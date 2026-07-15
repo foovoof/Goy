@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/identity/digital-identifier.schema.json",
+  "title": "DigitalIdentifier",
+  "description": "معرف رقمي",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "enum": [
+        "email",
+        "phone",
+        "username",
+        "wallet",
+        "ip",
+        "device_id",
+        "url"
+      ]
+    },
+    "value": {
+      "type": "string",
+      "description": "قيمة"
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "kind",
+    "value"
+  ],
+  "additionalProperties": false
+}
