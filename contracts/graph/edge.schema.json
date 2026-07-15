@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/graph/edge.schema.json",
+  "title": "GraphEdge",
+  "description": "حافة موجهة",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "from": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "to": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "kind": {
+      "type": "string",
+      "description": "نوع العلاقة"
+    },
+    "weight": {
+      "type": "number"
+    },
+    "directed": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "id",
+    "from",
+    "to",
+    "kind"
+  ],
+  "additionalProperties": false
+}
