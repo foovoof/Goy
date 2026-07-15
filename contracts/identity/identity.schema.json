@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/identity/identity.schema.json",
+  "title": "Identity",
+  "description": "هوية موحدة",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "الاسم المعروض"
+    },
+    "identifiers": {
+      "type": "array",
+      "items": {
+        "$ref": "https://foovoof.github.io/Goy/contracts/common/identifier.schema.json"
+      }
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "$ref": "https://foovoof.github.io/Goy/contracts/identity/alias.schema.json"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "display_name"
+  ],
+  "additionalProperties": false
+}
