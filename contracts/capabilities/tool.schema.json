@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/capabilities/tool.schema.json",
+  "title": "Tool",
+  "description": "أداة قابلة للاستدعاء من الوكلاء",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "name": {
+      "type": "string",
+      "description": "اسم"
+    },
+    "description": {
+      "type": "string",
+      "description": "وصف"
+    },
+    "parameters_schema": {
+      "type": "string",
+      "description": "مرجع مخطط المعاملات"
+    },
+    "returns_schema": {
+      "type": "string",
+      "description": "مرجع مخطط الإرجاع"
+    },
+    "side_effects": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "parameters_schema"
+  ],
+  "additionalProperties": false
+}
