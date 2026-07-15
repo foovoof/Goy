@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/agent/agent-context.schema.json",
+  "title": "AgentContext",
+  "description": "سياق تنفيذ الوكيل",
+  "type": "object",
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "case_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "investigation_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "locale": {
+      "type": "string",
+      "description": "لغة"
+    },
+    "actor": {
+      "type": "string",
+      "description": "منفذ الطلب"
+    },
+    "trace_id": {
+      "type": "string",
+      "description": "معرف التتبع"
+    },
+    "deadline_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "variables": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "session_id"
+  ],
+  "additionalProperties": false
+}
