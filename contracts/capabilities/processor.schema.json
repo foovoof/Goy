@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/capabilities/processor.schema.json",
+  "title": "Processor",
+  "description": "معالج بيانات",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "name": {
+      "type": "string",
+      "description": "اسم"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "ingest",
+        "normalize",
+        "enrich",
+        "analyze",
+        "export"
+      ]
+    },
+    "input_kind": {
+      "type": "string",
+      "description": "نوع الإدخال"
+    },
+    "output_kind": {
+      "type": "string",
+      "description": "نوع الإخراج"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "stage"
+  ],
+  "additionalProperties": false
+}
