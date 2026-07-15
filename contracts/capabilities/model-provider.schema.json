@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/capabilities/model-provider.schema.json",
+  "title": "ModelProvider",
+  "description": "مزود نموذج ذكاء اصطناعي",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "name": {
+      "type": "string",
+      "description": "اسم"
+    },
+    "family": {
+      "type": "string",
+      "enum": [
+        "chat",
+        "embedding",
+        "vision",
+        "asr",
+        "tts",
+        "image"
+      ]
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "family",
+    "models"
+  ],
+  "additionalProperties": false
+}
