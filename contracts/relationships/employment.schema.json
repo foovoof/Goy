@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/relationships/employment.schema.json",
+  "title": "Employment",
+  "description": "توظيف",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "person_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "organization_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "role": {
+      "type": "string",
+      "description": "منصب"
+    },
+    "start": {
+      "type": "string",
+      "format": "date"
+    },
+    "end": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "id",
+    "person_id",
+    "organization_id"
+  ],
+  "additionalProperties": false
+}
