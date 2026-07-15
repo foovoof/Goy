@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/provenance/source-reference.schema.json",
+  "title": "SourceReference",
+  "description": "مرجع مصدر",
+  "type": "object",
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "locator": {
+      "type": "string",
+      "description": "محدد"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "source_id"
+  ],
+  "additionalProperties": false
+}
