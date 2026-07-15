@@ -1,0 +1,44 @@
+# أحداث agent
+domain: agent
+version: 1.0.0
+events:
+  - name: agent.started
+    description: بدأ الوكيل
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
+  - name: agent.progress
+    description: تقدم
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
+  - name: agent.completed
+    description: اكتمل
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
+  - name: agent.failed
+    description: فشل
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
