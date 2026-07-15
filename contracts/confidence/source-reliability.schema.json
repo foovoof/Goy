@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/confidence/source-reliability.schema.json",
+  "title": "SourceReliability",
+  "description": "موثوقية المصدر (NATO A1-F6)",
+  "type": "object",
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "reliability": {
+      "type": "string",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    },
+    "credibility": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6
+    }
+  },
+  "required": [
+    "source_id",
+    "reliability",
+    "credibility"
+  ],
+  "additionalProperties": false
+}
