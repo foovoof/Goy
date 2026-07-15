@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/agent/agent-error.schema.json",
+  "title": "AgentError",
+  "description": "خطأ صادر من وكيل",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "رمز خطأ"
+    },
+    "message": {
+      "type": "string",
+      "description": "رسالة"
+    },
+    "retryable": {
+      "type": "boolean"
+    },
+    "cause": {
+      "type": "string"
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "agent_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    }
+  },
+  "required": [
+    "code",
+    "message",
+    "occurred_at"
+  ],
+  "additionalProperties": false
+}
