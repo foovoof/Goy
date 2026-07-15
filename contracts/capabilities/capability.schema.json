@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/capabilities/capability.schema.json",
+  "title": "Capability",
+  "description": "قدرة قابلة للاكتشاف",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "name": {
+      "type": "string",
+      "description": "اسم القدرة"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "tool",
+        "processor",
+        "connector",
+        "model"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "description": "إصدار"
+    },
+    "description": {
+      "type": "string",
+      "description": "وصف"
+    },
+    "schema": {
+      "type": "string",
+      "description": "مرجع مخطط الإدخال/الإخراج"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "kind",
+    "version"
+  ],
+  "additionalProperties": false
+}
