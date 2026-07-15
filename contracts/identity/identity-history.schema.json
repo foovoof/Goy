@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/identity/identity-history.schema.json",
+  "title": "IdentityHistory",
+  "description": "تاريخ التغييرات على الهوية",
+  "type": "object",
+  "properties": {
+    "identity_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "at",
+          "field"
+        ],
+        "properties": {
+          "at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "field": {
+            "type": "string",
+            "description": "الحقل"
+          },
+          "before": {},
+          "after": {}
+        }
+      }
+    }
+  },
+  "required": [
+    "identity_id",
+    "changes"
+  ],
+  "additionalProperties": false
+}
