@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/entities/organization.schema.json",
+  "title": "Organization",
+  "description": "منظمة",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string",
+      "description": "اسم"
+    },
+    "legal_form": {
+      "type": "string",
+      "description": "الشكل القانوني"
+    },
+    "country": {
+      "type": "string",
+      "description": "الدولة"
+    },
+    "identifiers": {
+      "type": "array",
+      "items": {
+        "$ref": "https://foovoof.github.io/Goy/contracts/common/identifier.schema.json"
+      }
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
+}
