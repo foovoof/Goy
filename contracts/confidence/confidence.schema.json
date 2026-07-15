@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/common/confidence.schema.json",
+  "title": "Confidence",
+  "description": "درجة ثقة عامة",
+  "type": "object",
+  "properties": {
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "basis": {
+      "type": "string",
+      "description": "أساس التقدير"
+    },
+    "assessed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "score"
+  ],
+  "additionalProperties": false
+}
