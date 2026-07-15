@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/identity/alias.schema.json",
+  "title": "Alias",
+  "description": "اسم بديل",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "string",
+      "description": "قيمة"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "nickname",
+        "handle",
+        "legal",
+        "translit"
+      ]
+    },
+    "since": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "value"
+  ],
+  "additionalProperties": false
+}
