@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/agent/agent.schema.json",
+  "title": "Agent",
+  "description": "وكيل ذكي داخل المنصة",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "name": {
+      "type": "string",
+      "description": "اسم الوكيل"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "research",
+        "extraction",
+        "enrichment",
+        "analysis",
+        "reporting",
+        "monitor"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "description": "إصدار الوكيل"
+    },
+    "description": {
+      "type": "string",
+      "description": "وصف"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "$ref": "https://foovoof.github.io/Goy/contracts/agent/agent-capability.schema.json"
+      }
+    },
+    "manifest_ref": {
+      "type": "string",
+      "description": "مرجع البيان"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "kind",
+    "version"
+  ],
+  "additionalProperties": false
+}
