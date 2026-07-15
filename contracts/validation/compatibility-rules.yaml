@@ -1,0 +1,15 @@
+# قواعد التوافق بين إصدارات العقود
+version: 1.0.0
+rules:
+  - id: no-required-field-added
+    severity: error
+    description: لا يجوز إضافة حقل مطلوب في تحديث ثانوي.
+  - id: no-field-removed
+    severity: error
+    description: لا يجوز حذف حقل موجود في تحديث ثانوي.
+  - id: no-type-change
+    severity: error
+    description: لا يجوز تغيير نوع حقل موجود.
+  - id: no-enum-value-removed
+    severity: error
+    description: لا يجوز حذف قيمة enum.
