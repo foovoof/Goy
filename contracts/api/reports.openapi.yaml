@@ -1,0 +1,99 @@
+openapi: 3.1.0
+info:
+  title: Reports API
+  version: 1.0.0
+  description: إدارة التقارير
+servers:
+  - url: https://api.goy.local/v1
+tags:
+  - name: Reports
+paths:
+  /reports:
+    get:
+      tags: [Reports]
+      summary: قائمة reports
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          description: قائمة العناصر
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/Reports' }
+                  page: { type: integer }
+                  total: { type: integer }
+    post:
+      tags: [Reports]
+      summary: إنشاء report
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Reports' }
+      responses:
+        '201':
+          description: تم الإنشاء
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Reports' }
+  /reports/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string, format: uuid }
+    get:
+      tags: [Reports]
+      summary: قراءة عنصر
+      responses:
+        '200':
+          description: العنصر
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Reports' }
+        '404': { description: غير موجود }
+    patch:
+      tags: [Reports]
+      summary: تحديث جزئي
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Reports' }
+      responses:
+        '200':
+          description: تم التحديث
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Reports' }
+    delete:
+      tags: [Reports]
+      summary: حذف
+      responses:
+        '204': { description: تم الحذف }
+components:
+  parameters:
+    Page:
+      name: page
+      in: query
+      schema: { type: integer, minimum: 1, default: 1 }
+    PageSize:
+      name: page_size
+      in: query
+      schema: { type: integer, minimum: 1, maximum: 200, default: 50 }
+  schemas:
+    Reports:
+      type: object
+      required: [id]
+      properties:
+        id: { type: string, format: uuid }
+        created_at: { type: string, format: date-time }
+        updated_at: { type: string, format: date-time }
+        name: { type: string }
+        metadata: { type: object, additionalProperties: true }
