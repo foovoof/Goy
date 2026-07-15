@@ -1,0 +1,18 @@
+# ملكية العقود
+version: 1.0.0
+teams:
+  - id: platform
+    contact: platform@goy.local
+    owns: [common/, registry/, validation/, versioning/]
+  - id: investigations
+    contact: investigations@goy.local
+    owns: [investigations/, domain/, evidence/]
+  - id: intelligence
+    contact: intel@goy.local
+    owns: [entities/, identity/, relationships/, graph/]
+  - id: orchestration
+    contact: orch@goy.local
+    owns: [orchestration/, workflow/, agent/]
+  - id: security
+    contact: security@goy.local
+    owns: [security/, provenance/]
