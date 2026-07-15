@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/workflow/workflow-execution.schema.json",
+  "title": "WorkflowExecution",
+  "description": "تنفيذ سير عمل",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "workflow_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "running",
+        "succeeded",
+        "failed",
+        "cancelled"
+      ]
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "context": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/orchestration/execution-context.schema.json"
+    }
+  },
+  "required": [
+    "id",
+    "workflow_id",
+    "status"
+  ],
+  "additionalProperties": false
+}
