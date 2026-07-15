@@ -1,0 +1,11 @@
+# تبعيات العقود
+version: 1.0.0
+dependencies:
+  domain/evidence.schema.json:
+    - common/confidence.schema.json
+    - evidence/chain-of-custody.schema.json
+  investigations/investigation.schema.json:
+    - domain/case.schema.json
+  graph/graph.schema.json:
+    - graph/node.schema.json
+    - graph/edge.schema.json
