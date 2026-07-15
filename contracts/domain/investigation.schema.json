@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/domain/investigation.schema.json",
+  "title": "Investigation",
+  "description": "تحقيق",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "case_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "title": {
+      "type": "string",
+      "description": "العنوان"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "running",
+        "paused",
+        "completed",
+        "cancelled"
+      ]
+    },
+    "lead": {
+      "type": "string",
+      "description": "قائد التحقيق"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
+}
