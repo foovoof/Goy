@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/domain/source.schema.json",
+  "title": "Source",
+  "description": "مصدر بيانات",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string",
+      "description": "الاسم"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "osint",
+        "internal",
+        "partner",
+        "user_submitted",
+        "sensor"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "description": "URL"
+    },
+    "reliability": {
+      "type": "string",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
+}
