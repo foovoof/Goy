@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/identity/identity-resolution.schema.json",
+  "title": "IdentityResolution",
+  "description": "حل هوية عبر مطابقة",
+  "type": "object",
+  "properties": {
+    "candidate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    },
+    "resolved_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "algorithm": {
+      "type": "string",
+      "description": "خوارزمية"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "required": [
+    "candidate_ids",
+    "score"
+  ],
+  "additionalProperties": false
+}
