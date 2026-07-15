@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/relationships/ownership.schema.json",
+  "title": "Ownership",
+  "description": "ملكية",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "owner_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "asset_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "share": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "since": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "id",
+    "owner_id",
+    "asset_id"
+  ],
+  "additionalProperties": false
+}
