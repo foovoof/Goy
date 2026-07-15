@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/service-interfaces/workflow-service.schema.json",
+  "title": "WorkflowService",
+  "description": "خدمة تنفيذ سير العمل",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "الاسم"
+    },
+    "version": {
+      "type": "string",
+      "description": "إصدار"
+    },
+    "endpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "input",
+          "output"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "اسم العملية"
+          },
+          "input": {
+            "type": "string",
+            "description": "مرجع مخطط"
+          },
+          "output": {
+            "type": "string",
+            "description": "مرجع مخطط"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "name",
+    "version",
+    "endpoints"
+  ],
+  "additionalProperties": false
+}
