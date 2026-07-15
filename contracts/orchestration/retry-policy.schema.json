@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/orchestration/retry-policy.schema.json",
+  "title": "RetryPolicy",
+  "description": "سياسة الإعادة",
+  "type": "object",
+  "properties": {
+    "max_attempts": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 50,
+      "default": 3
+    },
+    "backoff": {
+      "type": "string",
+      "enum": [
+        "fixed",
+        "exponential",
+        "linear"
+      ],
+      "default": "exponential"
+    },
+    "initial_delay_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 500
+    },
+    "max_delay_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 30000
+    }
+  },
+  "required": [
+    "max_attempts"
+  ],
+  "additionalProperties": false
+}
