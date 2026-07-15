@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/evidence/evidence-reference.schema.json",
+  "title": "EvidenceReference",
+  "description": "مرجع دليل",
+  "type": "object",
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "locator": {
+      "type": "string",
+      "description": "محدد داخل الدليل"
+    }
+  },
+  "required": [
+    "evidence_id"
+  ],
+  "additionalProperties": false
+}
