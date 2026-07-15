@@ -1,0 +1,34 @@
+# أحداث system
+domain: system
+version: 1.0.0
+events:
+  - name: system.startup
+    description: إقلاع
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
+  - name: system.shutdown
+    description: إيقاف
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
+  - name: system.alert
+    description: تنبيه
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
