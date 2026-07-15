@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/workflow/workflow-step.schema.json",
+  "title": "WorkflowStep",
+  "description": "خطوة سير عمل",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "id"
+    },
+    "name": {
+      "type": "string",
+      "description": "اسم"
+    },
+    "action": {
+      "type": "string",
+      "description": "action"
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "retry": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/workflow/retry-policy.schema.json"
+    }
+  },
+  "required": [
+    "id",
+    "action"
+  ],
+  "additionalProperties": false
+}
