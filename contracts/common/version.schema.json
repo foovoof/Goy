@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/common/version.schema.json",
+  "title": "Version",
+  "description": "نسخة دلالية",
+  "type": "object",
+  "properties": {
+    "major": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "minor": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "patch": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "prerelease": {
+      "type": "string",
+      "description": "prerelease"
+    }
+  },
+  "required": [
+    "major",
+    "minor",
+    "patch"
+  ],
+  "additionalProperties": false
+}
