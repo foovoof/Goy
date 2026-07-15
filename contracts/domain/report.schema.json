@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/domain/report.schema.json",
+  "title": "Report",
+  "description": "تقرير",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "title": {
+      "type": "string",
+      "description": "العنوان"
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "md",
+        "pdf",
+        "html",
+        "json"
+      ]
+    },
+    "content_ref": {
+      "type": "string",
+      "description": "مرجع المحتوى"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
+}
