@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/evidence/chain-of-custody.schema.json",
+  "title": "ChainOfCustody",
+  "description": "سلسلة حيازة الدليل",
+  "type": "object",
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "actor",
+          "action",
+          "at"
+        ],
+        "properties": {
+          "actor": {
+            "type": "string",
+            "description": "مستخدم"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "received",
+              "transferred",
+              "analyzed",
+              "stored",
+              "released"
+            ]
+          },
+          "at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "notes": {
+            "type": "string",
+            "description": "ملاحظات"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "evidence_id",
+    "entries"
+  ],
+  "additionalProperties": false
+}
