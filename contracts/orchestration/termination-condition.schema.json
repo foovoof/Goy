@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/orchestration/termination-condition.schema.json",
+  "title": "TerminationCondition",
+  "description": "شرط إنهاء",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "enum": [
+        "success",
+        "failure",
+        "timeout",
+        "cancel",
+        "predicate"
+      ]
+    },
+    "predicate": {
+      "type": "string",
+      "description": "تعبير منطقي"
+    }
+  },
+  "required": [
+    "kind"
+  ],
+  "additionalProperties": false
+}
