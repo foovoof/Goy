@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/evidence/evidence-item.schema.json",
+  "title": "EvidenceItem",
+  "description": "عنصر دليل مفرد",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "document",
+        "image",
+        "video",
+        "audio",
+        "url",
+        "observation",
+        "transcript"
+      ]
+    },
+    "uri": {
+      "type": "string",
+      "description": "مسار"
+    },
+    "hash": {
+      "type": "string",
+      "description": "SHA-256"
+    },
+    "collected_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id",
+    "kind"
+  ],
+  "additionalProperties": false
+}
