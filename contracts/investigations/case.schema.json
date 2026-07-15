@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/domain/case.schema.json",
+  "title": "Case",
+  "description": "قضية حاوية للتحقيقات",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "title": {
+      "type": "string",
+      "description": "العنوان"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "active",
+        "closed",
+        "archived"
+      ]
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "assignee": {
+      "type": "string",
+      "description": "المسؤول"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
+}
