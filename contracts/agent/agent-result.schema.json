@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/agent/agent-result.schema.json",
+  "title": "AgentResult",
+  "description": "نتيجة تنفيذ وكيل",
+  "type": "object",
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "agent_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "success",
+        "partial",
+        "failed"
+      ]
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "error": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/agent/agent-error.schema.json"
+    },
+    "finished_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duration_ms": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "task_id",
+    "agent_id",
+    "status",
+    "finished_at"
+  ],
+  "additionalProperties": false
+}
