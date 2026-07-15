@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/confidence/finding-confidence.schema.json",
+  "title": "FindingConfidence",
+  "description": "درجة ثقة نتيجة",
+  "type": "object",
+  "properties": {
+    "finding_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "required": [
+    "finding_id",
+    "score"
+  ],
+  "additionalProperties": false
+}
