@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/provenance/evidence-origin.schema.json",
+  "title": "EvidenceOrigin",
+  "description": "أصل الدليل",
+  "type": "object",
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "collected_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "collector": {
+      "type": "string",
+      "description": "جامع"
+    },
+    "method": {
+      "type": "string",
+      "description": "طريقة"
+    }
+  },
+  "required": [
+    "source_id",
+    "collected_at"
+  ],
+  "additionalProperties": false
+}
