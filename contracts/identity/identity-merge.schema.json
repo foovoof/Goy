@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/identity/identity-merge.schema.json",
+  "title": "IdentityMerge",
+  "description": "دمج هويتين",
+  "type": "object",
+  "properties": {
+    "target_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    },
+    "reason": {
+      "type": "string",
+      "description": "سبب"
+    },
+    "merged_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "merged_by": {
+      "type": "string",
+      "description": "محرر"
+    }
+  },
+  "required": [
+    "target_id",
+    "source_ids",
+    "merged_at"
+  ],
+  "additionalProperties": false
+}
