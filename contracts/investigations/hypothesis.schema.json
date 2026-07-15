@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/investigations/hypothesis.schema.json",
+  "title": "Hypothesis",
+  "description": "فرضية",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "statement": {
+      "type": "string",
+      "description": "النص"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "supported",
+        "refuted",
+        "inconclusive"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "statement",
+    "status"
+  ],
+  "additionalProperties": false
+}
