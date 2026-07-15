@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/confidence/entity-confidence.schema.json",
+  "title": "EntityConfidence",
+  "description": "درجة ثقة كيان",
+  "type": "object",
+  "properties": {
+    "entity_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "factors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "entity_id",
+    "score"
+  ],
+  "additionalProperties": false
+}
