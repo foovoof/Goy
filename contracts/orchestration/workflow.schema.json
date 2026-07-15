@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/orchestration/workflow-definition.schema.json",
+  "title": "WorkflowDefinition",
+  "description": "تعريف سير عمل",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "name": {
+      "type": "string",
+      "description": "اسم"
+    },
+    "version": {
+      "type": "string",
+      "description": "إصدار"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "retry": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/orchestration/retry-policy.schema.json"
+    },
+    "timeout": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/orchestration/timeout-policy.schema.json"
+    },
+    "on_failure": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/orchestration/failure-policy.schema.json"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "version",
+    "steps"
+  ],
+  "additionalProperties": false
+}
