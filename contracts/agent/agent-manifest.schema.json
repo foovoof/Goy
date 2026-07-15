@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/agent/agent-manifest.schema.json",
+  "title": "AgentManifest",
+  "description": "بيان تعريفي لوكيل",
+  "type": "object",
+  "properties": {
+    "agent": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/agent/agent.schema.json"
+    },
+    "runtime": {
+      "type": "string",
+      "enum": [
+        "nodejs",
+        "python",
+        "wasm",
+        "edge"
+      ]
+    },
+    "entrypoint": {
+      "type": "string",
+      "description": "نقطة الدخول"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "env": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "agent",
+    "runtime",
+    "entrypoint"
+  ],
+  "additionalProperties": false
+}
