@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/provenance/audit-record.schema.json",
+  "title": "AuditRecord",
+  "description": "سجل تدقيق",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "actor": {
+      "type": "string",
+      "description": "منفذ"
+    },
+    "action": {
+      "type": "string",
+      "description": "إجراء"
+    },
+    "target": {
+      "type": "string",
+      "description": "هدف"
+    },
+    "at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "id",
+    "actor",
+    "action",
+    "at"
+  ],
+  "additionalProperties": false
+}
