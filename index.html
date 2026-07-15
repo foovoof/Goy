@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Goy — منصة تحقيق واستخبارات مفتوحة المصدر (OSINT) لجمع المعلومات والاستعلام والربط بين المصادر." />
+  <meta name="theme-color" content="#0b0f14" />
+  <meta property="og:title" content="Goy — منصة تحقيق واستخبارات OSINT" />
+  <meta property="og:description" content="بحث موحّد عبر عشرات مصادر OSINT: بريد، هاتف، اسم مستخدم، IP، دومين، صور، وثائق." />
+  <meta property="og:type" content="website" />
+  <title>Goy — منصة التحقيق والاستخبارات المفتوحة</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%2300e5a8'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='34' font-family='sans-serif' font-weight='bold' fill='%23081014'%3EG%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">G</span>
+      <div>
+        <h1>Goy <span class="tag">OSINT</span></h1>
+        <p class="sub">منصّة التحقيق والاستخبارات المفتوحة</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#search">بحث</a>
+      <a href="#categories">التصنيفات</a>
+      <a href="#favorites">المفضلة</a>
+      <a href="#history">السجل</a>
+      <a href="#about">عن المنصة</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="search" class="hero">
+      <h2>ابحث في كل شيء — من مكان واحد</h2>
+      <p class="hero-sub">اكتب استعلامك (اسم، بريد، رقم، دومين، IP، صورة، اسم مستخدم...) وسنكتشف نوعه ونرسله إلى أفضل مصادر OSINT.</p>
+
+      <form id="searchForm" class="search-box" autocomplete="off">
+        <input id="q" type="text" placeholder="مثال: john.doe@gmail.com  •  +9647701234567  •  8.8.8.8  •  example.com  •  @username" aria-label="استعلام البحث" />
+        <select id="typeSelect" aria-label="نوع الاستعلام">
+          <option value="auto">كشف تلقائي</option>
+          <option value="username">اسم مستخدم</option>
+          <option value="email">بريد إلكتروني</option>
+          <option value="phone">رقم هاتف</option>
+          <option value="domain">نطاق / موقع</option>
+          <option value="ip">عنوان IP</option>
+          <option value="person">اسم شخص</option>
+          <option value="image">صورة (URL)</option>
+          <option value="document">وثيقة / ملف</option>
+          <option value="hash">Hash (MD5/SHA)</option>
+          <option value="bitcoin">عنوان Bitcoin</option>
+          <option value="general">بحث عام</option>
+        </select>
+        <button type="submit">تحقيق</button>
+      </form>
+
+      <div id="detectedType" class="detected" aria-live="polite"></div>
+    </section>
+
+    <section id="results" class="results" aria-live="polite"></section>
+
+    <section id="categories" class="section">
+      <h3>كل التصنيفات</h3>
+      <div id="categoriesGrid" class="cat-grid"></div>
+    </section>
+
+    <section id="favorites" class="section">
+      <h3>المفضلة</h3>
+      <div id="favoritesList" class="fav-list"><p class="muted">لا توجد مفضّلة بعد. اضغط ★ على أي أداة لإضافتها.</p></div>
+    </section>
+
+    <section id="history" class="section">
+      <h3>سجل الاستعلامات</h3>
+      <div id="historyList" class="history-list"><p class="muted">لم تُجرِ أي بحث بعد.</p></div>
+      <button id="clearHistory" class="btn-ghost">مسح السجل</button>
+    </section>
+
+    <section id="about" class="section about">
+      <h3>عن المنصة</h3>
+      <p>
+        <strong>Goy</strong> يوحّد أدوات الاستخبارات المفتوحة (OSINT) في واجهة واحدة.
+        لا يُخزَّن أي بيانات على خادم — كل شيء يعمل في متصفحك، ويُفتَح كل مصدر
+        في تبويب جديد مع تعبئة الاستعلام تلقائياً.
+      </p>
+      <p class="muted">
+        هذه الأدوات للأبحاث المشروعة، الصحافة الاستقصائية، والأمن السيبراني الدفاعي.
+        الالتزام بالقوانين المحلية والأخلاقيات مسؤولية المستخدم.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Goy OSINT · <a href="https://github.com/foovoof/Goy" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
