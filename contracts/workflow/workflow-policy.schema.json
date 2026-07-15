@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/workflow/workflow-policy.schema.json",
+  "title": "WorkflowPolicy",
+  "description": "سياسات سير العمل",
+  "type": "object",
+  "properties": {
+    "retry": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/workflow/retry-policy.schema.json"
+    },
+    "timeout": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/workflow/timeout-policy.schema.json"
+    },
+    "termination": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/workflow/termination-condition.schema.json"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}
