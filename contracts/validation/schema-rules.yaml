@@ -1,0 +1,9 @@
+# قواعد بنيوية للمخططات
+version: 1.0.0
+rules:
+  - id: json-schema-draft
+    expect: '2020-12'
+  - id: id-format
+    expect: uuid
+  - id: timestamp-format
+    expect: date-time
