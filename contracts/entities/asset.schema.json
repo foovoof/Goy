@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/entities/asset.schema.json",
+  "title": "Asset",
+  "description": "أصل مادي أو رقمي",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "vehicle",
+        "device",
+        "account",
+        "property",
+        "cryptocurrency"
+      ]
+    },
+    "label": {
+      "type": "string",
+      "description": "تسمية"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
+}
