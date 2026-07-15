@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/investigations/task.schema.json",
+  "title": "InvestigationTask",
+  "description": "مهمة تحقيقية",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "investigation_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "title": {
+      "type": "string",
+      "description": "عنوان"
+    },
+    "assignee": {
+      "type": "string",
+      "description": "مسؤول"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "todo",
+        "in_progress",
+        "blocked",
+        "done"
+      ]
+    },
+    "due_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id",
+    "investigation_id",
+    "title",
+    "status"
+  ],
+  "additionalProperties": false
+}
