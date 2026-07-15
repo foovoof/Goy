@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/agent/agent-task.schema.json",
+  "title": "AgentTask",
+  "description": "مهمة موجهة لوكيل",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "agent_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "capability": {
+      "type": "string",
+      "description": "القدرة المستدعاة"
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "context": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/agent/agent-context.schema.json"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9,
+      "default": 5
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id",
+    "agent_id",
+    "capability",
+    "input",
+    "created_at"
+  ],
+  "additionalProperties": false
+}
