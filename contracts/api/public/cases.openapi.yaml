@@ -1,0 +1,99 @@
+openapi: 3.1.0
+info:
+  title: Cases API (Public)
+  version: 1.0.0
+  description: إدارة القضايا — واجهة عامة
+servers:
+  - url: https://api.goy.local/v1
+tags:
+  - name: Cases
+paths:
+  /cases:
+    get:
+      tags: [Cases]
+      summary: قائمة cases
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          description: قائمة العناصر
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/Cases' }
+                  page: { type: integer }
+                  total: { type: integer }
+    post:
+      tags: [Cases]
+      summary: إنشاء case
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Cases' }
+      responses:
+        '201':
+          description: تم الإنشاء
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Cases' }
+  /cases/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string, format: uuid }
+    get:
+      tags: [Cases]
+      summary: قراءة عنصر
+      responses:
+        '200':
+          description: العنصر
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Cases' }
+        '404': { description: غير موجود }
+    patch:
+      tags: [Cases]
+      summary: تحديث جزئي
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Cases' }
+      responses:
+        '200':
+          description: تم التحديث
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Cases' }
+    delete:
+      tags: [Cases]
+      summary: حذف
+      responses:
+        '204': { description: تم الحذف }
+components:
+  parameters:
+    Page:
+      name: page
+      in: query
+      schema: { type: integer, minimum: 1, default: 1 }
+    PageSize:
+      name: page_size
+      in: query
+      schema: { type: integer, minimum: 1, maximum: 200, default: 50 }
+  schemas:
+    Cases:
+      type: object
+      required: [id]
+      properties:
+        id: { type: string, format: uuid }
+        created_at: { type: string, format: date-time }
+        updated_at: { type: string, format: date-time }
+        name: { type: string }
+        metadata: { type: object, additionalProperties: true }
