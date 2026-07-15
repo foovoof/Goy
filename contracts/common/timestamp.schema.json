@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/common/timestamp.schema.json",
+  "title": "Timestamp",
+  "description": "طابع زمني ISO 8601",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "timezone": {
+      "type": "string",
+      "description": "المنطقة الزمنية"
+    }
+  },
+  "required": [
+    "value"
+  ],
+  "additionalProperties": false
+}
