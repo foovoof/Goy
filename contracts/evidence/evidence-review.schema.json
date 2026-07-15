@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/evidence/evidence-review.schema.json",
+  "title": "EvidenceReview",
+  "description": "مراجعة دليل",
+  "type": "object",
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "reviewer": {
+      "type": "string",
+      "description": "مراجع"
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "rejected",
+        "needs_more"
+      ]
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string",
+      "description": "ملاحظات"
+    }
+  },
+  "required": [
+    "evidence_id",
+    "reviewer",
+    "outcome",
+    "reviewed_at"
+  ],
+  "additionalProperties": false
+}
