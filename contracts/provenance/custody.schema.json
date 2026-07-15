@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/provenance/custody.schema.json",
+  "title": "Custody",
+  "description": "حيازة",
+  "type": "object",
+  "properties": {
+    "holder": {
+      "type": "string",
+      "description": "حائز"
+    },
+    "since": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string",
+      "description": "ملاحظات"
+    }
+  },
+  "required": [
+    "holder",
+    "since"
+  ],
+  "additionalProperties": false
+}
