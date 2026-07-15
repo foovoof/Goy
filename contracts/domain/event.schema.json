@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/domain/event.schema.json",
+  "title": "Event",
+  "description": "حدث زمني",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "location": {
+      "type": "string",
+      "description": "موقع"
+    },
+    "description": {
+      "type": "string",
+      "description": "وصف"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
+}
