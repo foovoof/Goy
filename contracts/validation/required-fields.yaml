@@ -1,0 +1,10 @@
+# الحقول المطلوبة لكل مجموعة
+version: 1.0.0
+groups:
+  domain:
+    always_required: [id]
+    recommended: [created_at, updated_at]
+  events:
+    always_required: [id, occurred_at]
+  evidence:
+    always_required: [id, kind]
