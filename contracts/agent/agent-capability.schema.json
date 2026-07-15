@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/agent/agent-capability.schema.json",
+  "title": "AgentCapability",
+  "description": "قدرة يوفرها الوكيل",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "name": {
+      "type": "string",
+      "description": "اسم القدرة"
+    },
+    "input_schema": {
+      "type": "string",
+      "description": "مرجع مخطط الإدخال"
+    },
+    "output_schema": {
+      "type": "string"
+    },
+    "cost_hint": {
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "id",
+    "name"
+  ],
+  "additionalProperties": false
+}
