@@ -1,0 +1,12 @@
+# مصفوفة توافق الإصدارات
+version: 1.0.0
+matrix:
+  domain:
+    "1.0.x":
+      compatible_with:
+        api: ["1.0.x"]
+        events: ["1.0.x"]
+  api:
+    "1.0.x":
+      compatible_with:
+        domain: ["1.0.x"]
