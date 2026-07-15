@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/capabilities/capability-manifest.schema.json",
+  "title": "CapabilityManifest",
+  "description": "بيان مجموعة قدرات",
+  "type": "object",
+  "properties": {
+    "provider": {
+      "type": "string",
+      "description": "المزود"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "$ref": "https://foovoof.github.io/Goy/contracts/capabilities/capability.schema.json"
+      }
+    }
+  },
+  "required": [
+    "provider",
+    "capabilities"
+  ],
+  "additionalProperties": false
+}
