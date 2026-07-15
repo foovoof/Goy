@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/capabilities/connector.schema.json",
+  "title": "Connector",
+  "description": "موصل خدمة خارجية",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "name": {
+      "type": "string",
+      "description": "اسم"
+    },
+    "protocol": {
+      "type": "string",
+      "enum": [
+        "http",
+        "graphql",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ]
+    },
+    "auth": {
+      "type": "string",
+      "enum": [
+        "none",
+        "api_key",
+        "oauth2",
+        "basic",
+        "jwt"
+      ]
+    },
+    "base_url": {
+      "type": "string",
+      "description": "عنوان القاعدة"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "protocol",
+    "auth"
+  ],
+  "additionalProperties": false
+}
