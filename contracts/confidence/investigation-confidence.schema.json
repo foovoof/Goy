@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/confidence/investigation-confidence.schema.json",
+  "title": "InvestigationConfidence",
+  "description": "درجة ثقة تحقيق",
+  "type": "object",
+  "properties": {
+    "investigation_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "required": [
+    "investigation_id",
+    "score"
+  ],
+  "additionalProperties": false
+}
