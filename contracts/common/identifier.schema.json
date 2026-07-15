@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/common/identifier.schema.json",
+  "title": "Identifier",
+  "description": "معرف كائن",
+  "type": "object",
+  "properties": {
+    "scheme": {
+      "type": "string",
+      "enum": [
+        "uuid",
+        "urn",
+        "email",
+        "phone",
+        "url",
+        "hash",
+        "external"
+      ]
+    },
+    "value": {
+      "type": "string",
+      "description": "قيمة المعرف"
+    }
+  },
+  "required": [
+    "scheme",
+    "value"
+  ],
+  "additionalProperties": false
+}
