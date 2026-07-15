@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/entities/entity.schema.json",
+  "title": "Entity",
+  "description": "كيان مجرد",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "kind": {
+      "type": "string",
+      "description": "نوع"
+    },
+    "canonical_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
+}
