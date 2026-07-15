@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/evidence/evidence.schema.json",
+  "title": "Evidence",
+  "description": "دليل كامل",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "https://foovoof.github.io/Goy/contracts/evidence/evidence-item.schema.json"
+      }
+    },
+    "source_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "confidence": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/common/confidence.schema.json"
+    },
+    "custody": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/evidence/chain-of-custody.schema.json"
+    }
+  },
+  "required": [
+    "id",
+    "items"
+  ],
+  "additionalProperties": false
+}
