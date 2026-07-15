@@ -1,0 +1,34 @@
+# أحداث knowledge
+domain: knowledge
+version: 1.0.0
+events:
+  - name: knowledge.indexed
+    description: فهرسة
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
+  - name: knowledge.updated
+    description: تحديث
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
+  - name: knowledge.retracted
+    description: سحب
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
