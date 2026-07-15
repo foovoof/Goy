@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/evidence/evidence-status.schema.json",
+  "title": "EvidenceStatus",
+  "description": "حالة دليل",
+  "type": "object",
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "pending_review",
+        "verified",
+        "rejected",
+        "archived"
+      ]
+    },
+    "changed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "evidence_id",
+    "status",
+    "changed_at"
+  ],
+  "additionalProperties": false
+}
