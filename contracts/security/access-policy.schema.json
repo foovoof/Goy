@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/security/access-policy.schema.json",
+  "title": "AccessPolicy",
+  "description": "سياسة وصول",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "subject": {
+      "type": "string",
+      "description": "موضوع (role/user)"
+    },
+    "resource": {
+      "type": "string",
+      "description": "مورد"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "read",
+        "write",
+        "delete",
+        "execute",
+        "admin"
+      ]
+    },
+    "effect": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "deny"
+      ]
+    },
+    "conditions": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "id",
+    "subject",
+    "resource",
+    "action",
+    "effect"
+  ],
+  "additionalProperties": false
+}
