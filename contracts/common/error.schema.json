@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/common/error.schema.json",
+  "title": "Error",
+  "description": "خطأ قياسي (RFC 7807)",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "URI"
+    },
+    "title": {
+      "type": "string",
+      "description": "عنوان"
+    },
+    "status": {
+      "type": "integer"
+    },
+    "detail": {
+      "type": "string",
+      "description": "تفاصيل"
+    },
+    "instance": {
+      "type": "string",
+      "description": "مسار"
+    }
+  },
+  "required": [
+    "title",
+    "status"
+  ],
+  "additionalProperties": false
+}
