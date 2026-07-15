@@ -1,0 +1,34 @@
+# أحداث evidence
+domain: evidence
+version: 1.0.0
+events:
+  - name: evidence.ingested
+    description: استيعاب
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
+  - name: evidence.verified
+    description: تحقق
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
+  - name: evidence.rejected
+    description: رفض
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
