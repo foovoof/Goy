@@ -1,0 +1,23 @@
+openapi: 3.1.0
+info:
+  title: Goy Platform API
+  version: 1.0.0
+  description: واجهة موحّدة لمنصة تحقيق واستخبارات Goy
+servers:
+  - url: https://api.goy.local/v1
+tags:
+  - { name: Cases }
+  - { name: Investigations }
+  - { name: Entities }
+  - { name: Identities }
+  - { name: Evidence }
+  - { name: Reports }
+paths: {}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
