@@ -1,0 +1,13 @@
+# دورة حياة العقود
+version: 1.0.0
+stages:
+  - name: draft
+    description: قيد الصياغة
+  - name: proposed
+    description: مقترح للمراجعة
+  - name: stable
+    description: مستقر ومتاح للاستخدام
+  - name: deprecated
+    description: مهجور
+  - name: retired
+    description: متقاعد
