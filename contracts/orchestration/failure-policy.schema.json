@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/orchestration/failure-policy.schema.json",
+  "title": "FailurePolicy",
+  "description": "سياسة الفشل",
+  "type": "object",
+  "properties": {
+    "strategy": {
+      "type": "string",
+      "enum": [
+        "abort",
+        "skip",
+        "compensate",
+        "continue"
+      ]
+    },
+    "notify": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "strategy"
+  ],
+  "additionalProperties": false
+}
