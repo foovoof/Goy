@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/orchestration/state-machine.schema.json",
+  "title": "StateMachine",
+  "description": "آلة حالة",
+  "type": "object",
+  "properties": {
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "initial": {
+      "type": "string",
+      "description": "الحالة الابتدائية"
+    },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "$ref": "https://foovoof.github.io/Goy/contracts/orchestration/workflow-transition.schema.json"
+      }
+    }
+  },
+  "required": [
+    "states",
+    "initial"
+  ],
+  "additionalProperties": false
+}
