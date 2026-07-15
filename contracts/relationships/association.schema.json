@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/relationships/association.schema.json",
+  "title": "Association",
+  "description": "ارتباط عام",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "from_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "to_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "reason": {
+      "type": "string",
+      "description": "سبب"
+    }
+  },
+  "required": [
+    "id",
+    "from_id",
+    "to_id"
+  ],
+  "additionalProperties": false
+}
