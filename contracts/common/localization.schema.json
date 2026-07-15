@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/common/localization.schema.json",
+  "title": "Localization",
+  "description": "نصوص متعددة اللغات",
+  "type": "object",
+  "properties": {
+    "default": {
+      "type": "string",
+      "description": "لغة افتراضية"
+    },
+    "translations": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "default",
+    "translations"
+  ],
+  "additionalProperties": false
+}
