@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/entities/event.schema.json",
+  "title": "Event",
+  "description": "حدث كياني",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "title": {
+      "type": "string",
+      "description": "عنوان"
+    },
+    "location_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
+}
