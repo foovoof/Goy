@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/orchestration/workflow-transition.schema.json",
+  "title": "WorkflowTransition",
+  "description": "انتقال بين حالتين",
+  "type": "object",
+  "properties": {
+    "from": {
+      "type": "string",
+      "description": "من"
+    },
+    "to": {
+      "type": "string",
+      "description": "إلى"
+    },
+    "on": {
+      "type": "string",
+      "description": "حدث"
+    },
+    "when": {
+      "type": "string",
+      "description": "شرط"
+    }
+  },
+  "required": [
+    "from",
+    "to",
+    "on"
+  ],
+  "additionalProperties": false
+}
