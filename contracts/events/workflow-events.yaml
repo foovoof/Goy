@@ -1,0 +1,44 @@
+# أحداث workflow
+domain: workflow
+version: 1.0.0
+events:
+  - name: workflow.started
+    description: بدء
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
+  - name: workflow.step.completed
+    description: إكمال خطوة
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
+  - name: workflow.completed
+    description: اكتمال
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
+  - name: workflow.failed
+    description: فشل
+    payload:
+      type: object
+      required: [id, occurred_at]
+      properties:
+        id: { type: string, format: uuid }
+        occurred_at: { type: string, format: date-time }
+        actor: { type: string }
+        data: { type: object, additionalProperties: true }
