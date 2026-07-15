@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/provenance/provenance.schema.json",
+  "title": "Provenance",
+  "description": "أصل البيانات",
+  "type": "object",
+  "properties": {
+    "subject_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "origin": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/provenance/evidence-origin.schema.json"
+    },
+    "lineage": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/provenance/lineage.schema.json"
+    },
+    "custody": {
+      "$ref": "https://foovoof.github.io/Goy/contracts/provenance/custody.schema.json"
+    }
+  },
+  "required": [
+    "subject_id",
+    "origin"
+  ],
+  "additionalProperties": false
+}
