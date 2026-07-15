@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/common/pagination.schema.json",
+  "title": "Pagination",
+  "description": "معاملات ونتيجة التصفح",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "page_size": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 500
+    },
+    "total": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cursor": {
+      "type": "string",
+      "description": "مؤشر"
+    }
+  },
+  "required": [
+    "page",
+    "page_size"
+  ],
+  "additionalProperties": false
+}
