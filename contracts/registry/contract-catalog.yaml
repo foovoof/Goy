@@ -1,0 +1,42 @@
+# سجل عقود منصة Goy
+version: 1.0.0
+generated_at: 2026-01-01T00:00:00Z
+contracts:
+  - group: agent
+    path: agent/
+  - group: api
+    path: api/
+  - group: capabilities
+    path: capabilities/
+  - group: common
+    path: common/
+  - group: confidence
+    path: confidence/
+  - group: domain
+    path: domain/
+  - group: entities
+    path: entities/
+  - group: events
+    path: events/
+  - group: evidence
+    path: evidence/
+  - group: graph
+    path: graph/
+  - group: identity
+    path: identity/
+  - group: investigations
+    path: investigations/
+  - group: orchestration
+    path: orchestration/
+  - group: provenance
+    path: provenance/
+  - group: relationships
+    path: relationships/
+  - group: security
+    path: security/
+  - group: service-interfaces
+    path: service-interfaces/
+  - group: validation
+    path: validation/
+  - group: workflow
+    path: workflow/
