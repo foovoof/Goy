@@ -1,0 +1,11 @@
+# قواعد فحص أسلوبية
+version: 1.0.0
+rules:
+  - id: title-required
+    severity: warning
+    description: كل مخطط يجب أن يحوي title.
+  - id: description-required
+    severity: warning
+  - id: additional-properties-false
+    severity: warning
+    description: يفضّل ضبط additionalProperties=false.
