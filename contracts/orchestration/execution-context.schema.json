@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foovoof.github.io/Goy/contracts/orchestration/execution-context.schema.json",
+  "title": "ExecutionContext",
+  "description": "سياق تنفيذ سير عمل",
+  "type": "object",
+  "properties": {
+    "execution_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "workflow_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "معرف فريد"
+    },
+    "actor": {
+      "type": "string",
+      "description": "منفذ"
+    },
+    "variables": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "execution_id",
+    "workflow_id"
+  ],
+  "additionalProperties": false
+}
