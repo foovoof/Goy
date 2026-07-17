@@ -1,24 +1,45 @@
 services:
   - type: web
-    name: goy-osint
-    runtime: static
-    buildCommand: ""
-    staticPublishPath: .
-    pullRequestPreviewsEnabled: true
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: DENY
-      - path: /*
-        name: X-Content-Type-Options
-        value: nosniff
-      - path: /*
-        name: Referrer-Policy
-        value: strict-origin-when-cross-origin
-      - path: /*
-        name: Permissions-Policy
-        value: geolocation=(), camera=(), microphone=()
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
+    name: goy
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run migrate
+    startCommand: npm start
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MAX_DEPTH
+        value: "3"
+      - key: MAX_NODES
+        value: "200"
+      - key: PROVIDER_TIMEOUT_MS
+        value: "12000"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: goy-db
+          property: connectionString
+      - key: SHODAN_API_KEY
+        sync: false
+      - key: VIRUSTOTAL_API_KEY
+        sync: false
+      - key: HIBP_API_KEY
+        sync: false
+      - key: SECURITYTRAILS_API_KEY
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: IPINFO_TOKEN
+        sync: false
+      - key: ABUSEIPDB_API_KEY
+        sync: false
+      - key: URLSCAN_API_KEY
+        sync: false
+
+databases:
+  - name: goy-db
+    plan: free
+    postgresMajorVersion: "16"
